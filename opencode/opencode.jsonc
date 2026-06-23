@@ -1,0 +1,37 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "omlx": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "oMLX",
+      "options": {
+        "baseURL": "http://127.0.0.1:8000/v1",
+        "apiKey": "",
+      },
+      "models": {
+        "Qwen3.5-9B-MLX-4bit": {
+          "name": "Qwen3.5-9B-MLX-4bit",
+          "limit": {
+            "context": 65536,
+            "output": 4096,
+          },
+        },
+      },
+    },
+    "opencode-go": {
+      "name": "opencode-go",
+    },
+  },
+  "agent": {
+    "build": {
+      "prompt": "{file:./prompts/build.txt}",
+    },
+    "plan": {
+      "prompt": "{file:./prompts/plan.txt}",
+    },
+  },
+  "default_agent": "plan",
+  "permission": "allow",
+  "share": "disabled",
+  "model": "opencode-go/deepseek-v4-flash",
+}
